@@ -79,7 +79,15 @@ export default {
                 });
         },
         connect(){
-            axios.get('//localhost:8080/api/controller/connect', {timeout: 2000});
+            axios
+                .get('//localhost:8080/api/controller/connect', {timeout: 2000})
+                .then(response => {
+                    response;
+                    window.alert("Connection Successful!");
+                })
+                .catch(error => {
+                    window.alert(error)}
+                );
         }
     },
     created() {
